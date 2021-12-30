@@ -47,7 +47,7 @@ namespace HMX.HASSBlueriiot
 			Logging.WriteLog("HomeAssistant.Initialise()");
 
 			_strAPIKey = strAPIKey;
-			_strHAServer = "http://supervisor/core/api";
+			_strHAServer = "http://supervisor/core";
 
 			_httpClient.DefaultRequestHeaders.Add("Authorization", "Bearer " + _strAPIKey);
 		}
