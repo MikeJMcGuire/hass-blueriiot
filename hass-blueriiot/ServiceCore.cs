@@ -23,10 +23,10 @@ namespace HMX.HASSBlueriiot
 			if (!Configuration.GetOptionalConfiguration("HAServer", out strHAServer))
 				return;
 
-			if (!Configuration.GetConfiguration("BlueRiiotUser", out strUser))
+			if (!Configuration.GetConfiguration("BlueriiotUser", out strUser))
 				return;
 
-			if (!Configuration.GetPrivateConfiguration("BlueRiiotPassword", out strPassword))
+			if (!Configuration.GetPrivateConfiguration("BlueriiotPassword", out strPassword))
 				return;
 
 			if (!Configuration.GetPrivateConfiguration("SUPERVISOR_TOKEN", out strHAKey))
