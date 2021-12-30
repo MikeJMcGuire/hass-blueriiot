@@ -52,7 +52,7 @@ namespace HMX.HASSBlueriiot
 			_httpClient.DefaultRequestHeaders.Add("Authorization", "Bearer " + _strAPIKey);
 		}
 
-		public async static Task<bool> SetObjectState(long lRequestId, string strObject, string strState)
+		/*public async static Task<bool> SetObjectState(long lRequestId, string strObject, string strState)
 		{
 			JObject jRequest = new JObject();
 			string strPageURI;
@@ -68,7 +68,31 @@ namespace HMX.HASSBlueriiot
 			response = await SendAPIRequest(lRequestId, strPageURI, jRequest.ToString());
 
 			return response.Successful;
+		}*/
+
+		public async static Task<bool> SetObjectState(long lRequestId, string strObject, string strState, string strFriendlyName, string? strUnitOfMeasurement)
+		{
+			JObject jRequest = new JObject();
+			JObject jAttributes = new JObject();
+			string strPageURI;
+			GenericResponse response;
+
+			Logging.WriteLog("HomeAssistant.CreateObject() [0x{0}]", lRequestId.ToString("X8"));
+
+			jAttributes.Add("friendly_name", strFriendlyName);
+			if (strUnitOfMeasurement != null)
+				jAttributes.Add("unit_of_measurement", strUnitOfMeasurement);
+
+			jRequest.Add("state", strState);
+			jRequest.Add("attributes", jAttributes);
+
+			strPageURI = string.Format("/api/states/{0}", strObject);
+
+			response = await SendAPIRequest(lRequestId, strPageURI, jRequest.ToString());
+
+			return response.Successful;
 		}
+
 
 		public async static Task<GenericResponse> SendAPIRequest(long lRequestId, string strPageURI)
 		{
