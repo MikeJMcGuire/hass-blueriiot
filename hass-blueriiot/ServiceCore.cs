@@ -13,25 +13,26 @@ namespace HMX.HASSBlueriiot
 {
     public class ServiceCore
     {
-		private static string _strHAKey = "";
-
         public static void Start()
         {
 			IHost webHost;
-			string strUser, strPassword;
+			string strHAServer, strHAKey, strUser, strPassword;
 
 			Logging.WriteLog("ServiceCore.Start() Built: {0}", Properties.Resources.BuildDate);
 
+			if (!Configuration.GetOptionalConfiguration("HAServer", out strHAServer))
+				return;
+
 			if (!Configuration.GetConfiguration("BlueRiiotUser", out strUser))
 				return;
-			
+
 			if (!Configuration.GetPrivateConfiguration("BlueRiiotPassword", out strPassword))
 				return;
 
-			if (!Configuration.GetPrivateConfiguration("SUPERVISOR_TOKEN", out _strHAKey))
+			if (!Configuration.GetPrivateConfiguration("SUPERVISOR_TOKEN", out strHAKey))
 				return;
 
-			HomeAssistant.Initialise(_strHAKey); 
+			HomeAssistant.Initialise(strHAServer, strHAKey); 
 			BlueRiiot.Start(strUser, strPassword);			
 					
 			try
