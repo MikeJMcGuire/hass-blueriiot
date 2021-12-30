@@ -152,11 +152,11 @@ namespace HMX.HASSBlueriiot
                     // Add F support
                     await HomeAssistant.SetObjectState(lRequestId, "sensor.blueriiot_pool_temperature", dblTemperatureCelsius.ToString(), "Pool Temperature", "°C");
 
-                    await HomeAssistant.SetObjectState(lRequestId, "sensor.blueriiot_pool_ph", dblPh.ToString(), "Pool Temperature", null);
+                    await HomeAssistant.SetObjectState(lRequestId, "sensor.blueriiot_pool_ph", dblPh.ToString(), "Pool pH", null);
 
-                    await HomeAssistant.SetObjectState(lRequestId, "sensor.blueriiot_pool_orp", dblOrp.ToString(), "Pool Temperature", "mV");
+                    await HomeAssistant.SetObjectState(lRequestId, "sensor.blueriiot_pool_orp", dblOrp.ToString(), "Pool Orp", "mV");
 
-                    await HomeAssistant.SetObjectState(lRequestId, "sensor.blueriiot_pool_salinity", dblSalinity.ToString(), "Pool Temperature", "ppm");
+                    await HomeAssistant.SetObjectState(lRequestId, "sensor.blueriiot_pool_salinity", dblSalinity.ToString(), "Pool Salinity", "ppm");
                 }
             }
             catch (Exception eException)
