@@ -1,0 +1,25 @@
+{
+  "name": "Blueriiot Blue Connect",
+  "version": "2021.12.0",
+  "slug": "hass-blueriiot",
+  "description": "An add-on for Blueriiot Blue Connect pool sensors.",
+  "url": "https://github.com/MikeJMcGuire/hass-blueriiot",
+  "startup": "application",
+  "boot": "auto",
+  "image": "mikejmcguire/hass-blueriiot-{arch}",
+  "arch": [
+    "amd64",
+    "aarch64",
+    "armhf",
+    "armv7",
+    "i386"
+  ],
+  "options": {
+    "BlueriiotUser": "",
+    "BlueriiotPassword": ""
+  },
+  "schema": {
+    "BlueriiotUser": "str",
+    "BlueriiotPassword": "str"
+  }
+}
