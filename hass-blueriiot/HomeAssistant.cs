@@ -73,7 +73,7 @@ namespace HMX.HASSBlueriiot
 			return response.Successful;
 		}*/
 
-		public async static Task<bool> SetObjectState(long lRequestId, string strObject, string strState, string strFriendlyName, string? strUnitOfMeasurement)
+		public async static Task<bool> SetObjectState(long lRequestId, string strObject, string strState, string strFriendlyName, string? strIcon, string? strUnitOfMeasurement)
 		{
 			JObject jRequest = new JObject();
 			JObject jAttributes = new JObject();
@@ -85,6 +85,8 @@ namespace HMX.HASSBlueriiot
 			jAttributes.Add("friendly_name", strFriendlyName);
 			if (strUnitOfMeasurement != null)
 				jAttributes.Add("unit_of_measurement", strUnitOfMeasurement);
+			if (strIcon != null)
+				jAttributes.Add("icon", strIcon);
 
 			jRequest.Add("state", strState);
 			jRequest.Add("attributes", jAttributes);

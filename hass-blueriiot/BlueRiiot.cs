@@ -150,13 +150,13 @@ namespace HMX.HASSBlueriiot
                     Logging.WriteLog("BlueRiiot.Run() [0x{0}] Current Latency: {1} minute(s)", lRequestId.ToString("X8"), tsLatency.TotalMinutes.ToString("N1"));
 
                     // Add F support
-                    await HomeAssistant.SetObjectState(lRequestId, "sensor.blueriiot_pool_temperature", dblTemperatureCelsius.ToString(), "Pool Temperature", "°C");
+                    await HomeAssistant.SetObjectState(lRequestId, "sensor.blueriiot_pool_temperature", dblTemperatureCelsius.ToString(), "Pool Temperature", "mdi:coolant-temperature", "°C");
 
-                    await HomeAssistant.SetObjectState(lRequestId, "sensor.blueriiot_pool_ph", dblPh.ToString(), "Pool pH", null);
+                    await HomeAssistant.SetObjectState(lRequestId, "sensor.blueriiot_pool_ph", dblPh.ToString(), "Pool pH", "mdi:pool", null);
 
-                    await HomeAssistant.SetObjectState(lRequestId, "sensor.blueriiot_pool_orp", dblOrp.ToString(), "Pool Orp", "mV");
+                    await HomeAssistant.SetObjectState(lRequestId, "sensor.blueriiot_pool_orp", dblOrp.ToString(), "Pool Orp", "mdi:pool", "mV");
 
-                    await HomeAssistant.SetObjectState(lRequestId, "sensor.blueriiot_pool_salinity", dblSalinity.ToString(), "Pool Salinity", "ppm");
+                    await HomeAssistant.SetObjectState(lRequestId, "sensor.blueriiot_pool_salinity", dblSalinity.ToString(), "Pool Salinity", "mdi:pool", "ppm");
                 }
             }
             catch (Exception eException)
