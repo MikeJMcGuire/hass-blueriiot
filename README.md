@@ -1,12 +1,14 @@
 # hass-blueriiot
 Blueriiot Blue Connect Add-On for Home Assistant
 
-
-
+This add-on will periodically poll the Blueriiot API to retrieve sensor data from your Blue Connect unit.
 
 ## Configuration
 ### BlueriiotUser: string
-Set this field to core-mosquitto to use the HA Mosquitto MQTT add-on. Otherwise, specify a host or host:port for an alternative MQTT server.
+Set this field to your Blueriiot user name.
 
 ### BlueriiotPassword: string
-Setting this option to true will force the MQTT client to attempt a TLS connection to the MQTT broker.
+Set this field to your Blueriiot password.
+
+### HAKey: string
+Set this field to a long lived access token for a Home Assistant user with Administrator permissions (https://www.home-assistant.io/docs/authentication/). This account will be used to register and update the entities for the Blue Connect.

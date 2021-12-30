@@ -7,6 +7,7 @@
   "startup": "application",
   "boot": "auto",
   "image": "mikejmcguire/hass-blueriiot-{arch}",
+  "homeassistant_api": true,
   "arch": [
     "amd64",
     "aarch64",
@@ -16,10 +17,12 @@
   ],
   "options": {
     "BlueriiotUser": "",
-    "BlueriiotPassword": ""
+    "BlueriiotPassword": "",
+    "HAKey": ""
   },
   "schema": {
     "BlueriiotUser": "str",
-    "BlueriiotPassword": "str"
+    "BlueriiotPassword": "str",
+    "HAKey": "str"
   }
 }

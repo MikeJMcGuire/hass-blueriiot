@@ -1,21 +1,15 @@
-var builder = WebApplication.CreateBuilder(args);
+using System.Globalization;
 
-// Add services to the container.
-builder.Services.AddRazorPages();
-
-var app = builder.Build();
-
-// Configure the HTTP request pipeline.
-if (!app.Environment.IsDevelopment())
+namespace HMX.HASSBlueriiot
 {
-    app.UseExceptionHandler("/Error");
+	public class Program
+	{
+		public static void Main(string[] strArguments)
+		{
+			//CultureInfo.DefaultThreadCurrentCulture = new CultureInfo("en-AU");
+			//CultureInfo.DefaultThreadCurrentUICulture = new CultureInfo("en-AU");
+
+			ServiceCore.Start();
+		}
+	}
 }
-app.UseStaticFiles();
-
-app.UseRouting();
-
-app.UseAuthorization();
-
-app.MapRazorPages();
-
-app.Run();
