@@ -104,8 +104,6 @@ namespace HMX.HASSBlueriiot
 
                 foreach(SwpLastMeasurements measurement in blueMeasurements.Data)
 				{
-					Logging.WriteLog("BlueRiiot.Run() [0x{0}] Measurement: {1}", lRequestId.ToString("X8"), measurement.Name);
-
 					switch (measurement.Name)
 					{
                         case "temperature":
