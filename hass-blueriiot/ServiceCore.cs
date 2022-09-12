@@ -90,7 +90,7 @@ namespace HMX.HASSBlueriiot
 				"{{\"name\":\"Pool Salinity\",\"unique_id\":\"{1}-3\",\"device\":{{\"identifiers\":[\"{1}\"],\"name\":\"{2}\",\"model\":\"Container\",\"manufacturer\":\"Blueriiot\"}},\"state_topic\":\"sensor_pool/salinity\",\"unit_of_measurement\":\"ppm\",\"availability_topic\":\"{0}/status\"}}", _strServiceName.ToLower(), _strServiceName, _strServiceDescription);
 
 			MQTT.SendMessage("homeassistant/sensor/blueriiot/sensor_pool_conductivity/config",
-				"{{\"name\":\"Pool Conductivity\",\"unique_id\":\"{1}-3\",\"device\":{{\"identifiers\":[\"{1}\"],\"name\":\"{2}\",\"model\":\"Container\",\"manufacturer\":\"Blueriiot\"}},\"state_topic\":\"sensor_pool/conductivity\",\"unit_of_measurement\":\"μS\",\"availability_topic\":\"{0}/status\"}}", _strServiceName.ToLower(), _strServiceName, _strServiceDescription);
+				"{{\"name\":\"Pool Conductivity\",\"unique_id\":\"{1}-4\",\"device\":{{\"identifiers\":[\"{1}\"],\"name\":\"{2}\",\"model\":\"Container\",\"manufacturer\":\"Blueriiot\"}},\"state_topic\":\"sensor_pool/conductivity\",\"unit_of_measurement\":\"μS\",\"availability_topic\":\"{0}/status\"}}", _strServiceName.ToLower(), _strServiceName, _strServiceDescription);
 
 		}
 
